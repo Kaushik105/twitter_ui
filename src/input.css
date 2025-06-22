@@ -1,0 +1,70 @@
+@import "tailwindcss";
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+/* @media (max-width: 2710px) {
+    .left{
+        left: 380px;
+    }
+    
+}
+@media (max-width: 2610px) {
+    .left{
+        left: 260px;
+    }
+    
+}
+@media (max-width: 2310px) {
+    .left{
+        left: 200px;
+    }
+    
+}
+@media (max-width: 2150px) {
+    .left{
+        left: 140px;
+    }
+    
+}
+@media (max-width: 2050px) {
+    .left{
+        left: 80px;
+    }
+    
+}
+@media (max-width: 1900px) {
+    .left{
+        left: 50px;
+        margin-left: 100px;
+
+    }
+    
+}
+@media (max-width: 1700px) {
+    .left{
+        left: 20px;
+        margin-left: 80px;
+    }
+    
+}
+@media (max-width: 1600px) {
+    .left{
+        left: 10px;
+        margin-left: 60px;
+    }
+    
+}
+@media (max-width: 1600px) {
+    .left{
+        left: 10px;
+    }
+    
+} */
+

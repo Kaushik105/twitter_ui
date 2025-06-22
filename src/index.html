@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <link href="./input.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+
+  <body class="bg-black">
+    <div class="main relative text-white flex justify-center gap-0 md:gap-3.5">
+      <div
+        class="left pl-0 w-12 sticky h-screen top-0 xl:max-w-[370px] xl:min-w-[290px] pb-20 mb-10 pt-2.5 md:pl-3 min-h-[100vh]"
+      >
+        <img class="invert w-9 xl:ml-2" src="./assets/svgs/logo.svg" alt="" />
+        <div class="navigation mt-1.5 xl:mr-7.5 xl:pl-2">
+          <ul class="mb-2.5 flex flex-col gap-0.5 mt-1">
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span class="flex items-center p-2.5 gap-5 text-xl font-bold"
+                ><i class="fa-solid fa-house"></i>
+                <span class="navtext xl:block hidden">Home</span>
+              </span>
+            </li>
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span
+                class="flex items-center max-w-fit p-2.5 gap-5 text-xl font-medium"
+                ><i class="fa-solid fa-search"></i
+                ><span class="navtext xl:block hidden">Explore</span>
+              </span>
+            </li>
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span
+                class="flex relative items-center max-w-fit p-2.5 gap-5 text-xl font-medium"
+                >
+                <i class="fa-solid fa-bell"></i
+                >
+                <div class="absolute text-sm top-0 left-[10px] flex items-center justify-center z-50 bg-blue-500 w-5 h-5 rounded-full border-black" >8</div>
+                <span class="navtext xl:block hidden">Notifications</span>
+              </span>
+            </li>
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span
+                class="flex items-center max-w-fit p-2.5 gap-5 text-xl font-medium"
+                ><i class="fa-solid fa-envelope"></i>
+                <span class="navtext xl:block hidden">Messages</span></span
+              >
+            </li>
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span
+                class="flex items-center max-w-fit p-2.5 gap-5 text-xl font-medium"
+                ><img class="invert w-5 h-5" src="./assets/svgs/grok.svg" alt="" /><span
+                  class="navtext xl:block hidden"
+                  >Grok</span
+                >
+              </span>
+            </li>
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span
+                class="flex items-center max-w-fit p-2.5 gap-5 text-xl font-medium"
+                ><i class="fa-solid fa-list"></i
+                ><span class="navtext xl:block hidden">Lists</span>
+              </span>
+            </li>
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span
+                class="flex items-center max-w-fit p-2.5 gap-5 text-xl font-medium"
+                ><i class="fa-solid fa-users-line"></i
+                ><span class="navtext xl:block hidden">Communities</span>
+              </span>
+            </li>
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span
+                class="flex items-center max-w-fit p-2.5 gap-5 text-xl font-medium"
+                ><i class="fa-regular fa-star"></i
+                ><span class="navtext xl:block hidden">Premium</span>
+              </span>
+            </li>
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span
+                class="flex items-center max-w-fit p-2.5 gap-5 text-xl font-medium"
+                ><i class="fa-solid fa-user"></i
+                ><span class="navtext xl:block hidden">Profile</span>
+              </span>
+            </li>
+            <li
+              class="hover:bg-gray-900 hover:rounded-2xl hover:cursor-pointer"
+            >
+              <span
+                class="flex items-center max-w-fit p-2.5 gap-5 text-xl font-medium"
+                ><i class="fa-solid fa-ellipsis"></i
+                ><span class="navtext xl:block hidden">More</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="post-btn flex">
+          <button
+            class="flex items-center justify-center post hover:cursor-pointer xl:hidden px-5 py-2 bg-white text-black rounded-3xl w-[80%]"
+          >
+            <span class="material-symbols-outlined"> draw </span>
+          </button>
+          <button
+            class="post hover:cursor-pointer hidden xl:block px-15 py-3 bg-white text-black font-medium text-xl rounded-[40px] w-[80%]"
+          >
+            Post
+          </button>
+        </div>
+        <div
+          class="profile h-10 absolute bottom-6 flex gap-3.5 items-center justify-center"
+        >
+          <img
+            src="./assets/images/Passportphoto.jpg"
+            alt=""
+            class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+          />
+          <span class="xl:block hidden">
+            <p class="profileName">Kaushik Chowdhury</p>
+            <p class="userName text-gray-400 text-sm">@Kaushik16756470</p>
+          </span>
+          <span class="xl:block hidden">
+            <i class="fa-solid fa-ellipsis ml-2.5"></i>
+          </span>
+        </div>
+      </div>
+      <div
+        class="middle min-w-[330px] relative max-w-[600px] lg:min-w-[600px] border-gray-600 border-x w-[70%]"
+      >
+        <div
+          class="no-scrollbar border-b border-gray-600 topribbon flex whitespace-nowrap overflow-x-auto w-full h-14"
+        >
+          <p class="text-gray-400 p-3">For you</p>
+          <p class="text-gray-400 p-3">Following</p>
+          <p class="text-gray-400 p-3">Software Engineering</p>
+          <p class="text-gray-400 p-3">CS50</p>
+          <p class="text-gray-400 p-3">Web Developers</p>
+          <p class="text-gray-400 p-3">All India Startups</p>
+        </div>
+        <div class="writepost p-2 sm:p-4 flex gap-3 w-full">
+          <img
+            src="./assets/images/Passportphoto.jpg"
+            alt=""
+            class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+          />
+          <div class="writepost2 w-full flex flex-col gap-3">
+            <div class="upper px-2.5 flex flex-col gap-3">
+              <select
+                class="relative bottom-1 w-25 px-1.5 text-blue-400 border-gray-600 border rounded-2xl"
+                name="visibility"
+                id="visibility"
+              >
+                <option value="Anyone" class="bg-black text-white" default>
+                  Everyone
+                </option>
+                <option value="Followers" class="bg-black text-white">
+                  Followers
+                </option>
+                <option value="Verified" class="bg-black text-white">
+                  Verified
+                </option>
+              </select>
+              <input
+                type="text"
+                class="text-xl font-light"
+                placeholder="What's happening"
+              />
+              <span class="flex gap-2.5 items-center"
+                ><i
+                  class="fa-solid fa-earth-americas"
+                  style="color: #4382b3"
+                ></i>
+                <p class="text-blue-400 font-medium">Everyone can reply</p>
+              </span>
+            </div>
+            <div class="line border-gray-600 border-b"></div>
+            <div class="lower flex justify-between items-center">
+              <div class="icons flex gap-3.5">
+                <span class="material-symbols-outlined text-blue-400">
+                  home
+                </span>
+                <span class="hidden sm:block"><span class="material-symbols-outlined text-blue-400">
+                  gif_box
+                </span></span>
+                
+                <span class="hidden sm:block"><span class="material-symbols-outlined text-blue-400">
+                  format_list_bulleted
+                </span></span>
+
+                
+                <span class="material-symbols-outlined text-blue-400">
+                  sentiment_satisfied
+                </span>
+                <span class="material-symbols-outlined text-blue-400">
+                  calendar_clock
+                </span>
+                <span class="hidden sm:block"><span class="material-symbols-outlined  text-blue-400">
+                  location_on
+                </span></span>
+                
+              </div>
+              <div class="postbtn">
+                <button
+                  class="bg-white text-black text-base font-medium px-5.5 py-1.5 rounded-4xl"
+                >
+                  Post
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line border-gray-600 border-b"></div>
+        <div class="feed flex flex-col w-full">
+          <!-- Posts are starting -->
+          <div class="post flex gap-1.5 sm:gap-2 px-1.5 py-2 sm:p-3 sm:ml-1.5">
+            <div class="postdp pt-1">
+              <img
+                src="./assets/images/DonaldTrump.jpg"
+                alt=""
+                class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+              />
+            </div>
+            <div class="postContent w-full flex flex-col gap-2">
+              <div class="postauthor flex justify-between">
+                <span class="flex gap-1.5">
+                  <p class="userName font-medium text-white">Donald J. Trump
+                  </p>
+                  <p class="text-gray-500">@realDonaldTrump
+                    · 9h</p>
+                </span>
+                <span class="flex items-center">
+                  <i class="fa-solid fa-ellipsis text-gray-500"></i>
+                </span>
+              </div>
+              <div class="content pt-5 w-full sm:w-[90%]">
+                <img
+                  class="rounded-2xl object-cover w-full"
+                  src="./assets/images/DonaldTrumpPost_1.jpeg"
+                  alt=""
+                />
+              </div>
+              <div class="postreaction py-1.5 flex justify-between">
+                <span class="flex gap-3 w-[80%] justify-between">
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      chat_bubble </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >120K</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span
+                      fill="red"
+                      class="material-symbols-outlined text-gray-600"
+                    >
+                      repeat </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >148K</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      favorite </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >803K</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      bar_chart
+                    </span>
+                    <span class="text-gray-600 relative bottom-0.5"
+                      >123M</span
+                    ></span
+                  ></span
+                >
+                <span class="flex justify-between gap-1 items-center">
+                  <span class="material-symbols-outlined text-gray-600">
+                    bookmark
+                  </span>
+                  <span
+                    class="material-symbols-outlined relative bottom-0.5 text-gray-600"
+                  >
+                    ios_share
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="line border-gray-600 border-b"></div>
+          <div class="post flex gap-1.5 sm:gap-2 px-1.5 py-2 sm:p-3 sm:ml-1.5">
+            <div class="postdp pt-1">
+              <img
+                src="./assets/images/ElonMusk.jpg"
+                alt=""
+                class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+              />
+            </div>
+            <div class="postContent w-full flex flex-col gap-2">
+              <div class="postauthor flex justify-between">
+                <span class="flex gap-1.5">
+                  <p class="userName font-medium text-white">Elon Musk</p>
+                  <p class="text-gray-500">@elonmusk · 13h</p>
+                </span>
+                <span class="flex items-center">
+                  <i class="fa-solid fa-ellipsis text-gray-500"></i>
+                </span>
+              </div>
+              <div class="content pt-5 w-full sm:w-[90%]">
+                <img
+                  class="rounded-2xl object-cover w-full"
+                  src="./assets/images/ElonMuskPost_1.jpeg"
+                  alt=""
+                />
+              </div>
+              <div class="postreaction py-1.5 flex justify-between">
+                <span class="flex gap-3 w-[80%] justify-between">
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      chat_bubble </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >10K</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span
+                      fill="red"
+                      class="material-symbols-outlined text-gray-600"
+                    >
+                      repeat </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >23K</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      favorite </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >296K</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      bar_chart
+                    </span>
+                    <span class="text-gray-600 relative bottom-0.5"
+                      >28M</span
+                    ></span
+                  ></span
+                >
+                <span class="flex justify-between gap-1 items-center">
+                  <span class="material-symbols-outlined text-gray-600">
+                    bookmark
+                  </span>
+                  <span
+                    class="material-symbols-outlined relative bottom-0.5 text-gray-600"
+                  >
+                    ios_share
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="line border-gray-600 border-b"></div>
+          <div class="post flex gap-1.5 sm:gap-2 px-1.5 py-2 sm:p-3 sm:ml-1.5">
+            <div class="postdp pt-1">
+              <img
+                src="./assets/images/⚡JNS⚡ 𝕩 🪖.jpg"
+                alt=""
+                class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+              />
+            </div>
+            <div class="postContent w-full flex flex-col gap-2">
+              <div class="postauthor flex justify-between">
+                <span class="flex gap-1.5">
+                  <p class="userName font-medium text-white">⚡JNS⚡ 𝕩 🪖</p>
+                  <p class="text-gray-500">@_devJNS
+                    ·
+                    15h</p>
+                </span>
+                <span class="flex items-center">
+                  <i class="fa-solid fa-ellipsis text-gray-500"></i>
+                </span>
+              </div>
+              <p class="mt">unemployed developer's github</p>
+              <div class="content pt-4 w-full sm:w-[90%]">
+                <img
+                  class="rounded-2xl object-cover w-full"
+                  src="./assets/images/⚡JNS⚡ 𝕩 🪖Post_1.jpeg"
+                  alt=""
+                />
+              </div>
+              <div class="postreaction py-1.5 flex justify-between">
+                <span class="flex gap-3 w-[80%] justify-between">
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      chat_bubble </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >46</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span
+                      fill="red"
+                      class="material-symbols-outlined text-gray-600"
+                    >
+                      repeat </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >123</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      favorite </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >1.8K</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      bar_chart
+                    </span>
+                    <span class="text-gray-600 relative bottom-0.5"
+                      >28K</span
+                    ></span
+                  ></span
+                >
+                <span class="flex justify-between gap-1 items-center">
+                  <span class="material-symbols-outlined text-gray-600">
+                    bookmark
+                  </span>
+                  <span
+                    class="material-symbols-outlined relative bottom-0.5 text-gray-600"
+                  >
+                    ios_share
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="line border-gray-600 border-b"></div>
+          <div class="post flex gap-1.5 sm:gap-2 px-1.5 py-2 sm:p-3 sm:ml-1.5">
+            <div class="postdp pt-1">
+              <img
+                src="./assets/images/Passportphoto.jpg"
+                alt=""
+                class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+              />
+            </div>
+            <div class="postContent w-full flex flex-col gap-2">
+              <div class="postauthor flex justify-between">
+                <span class="flex gap-1.5">
+                  <p class="userName font-medium text-white">Kaushik Chowdhury</p>
+                  <p class="text-gray-500">@Kaushik16756470 · 9m</p>
+                </span>
+                <span class="flex items-center">
+                  <i class="fa-solid fa-ellipsis text-gray-500"></i>
+                </span>
+              </div>
+              <div class="content pt-5 w-full sm:w-[90%]">
+                <img
+                  class="rounded-2xl object-cover w-full"
+                  src="./assets/images/GmPz7qdawAA8Gfu.jpeg"
+                  alt=""
+                />
+              </div>
+              <div class="postreaction py-1.5 flex justify-between">
+                <span class="flex gap-3 w-[80%] justify-between">
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      chat_bubble </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >98</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span
+                      fill="red"
+                      class="material-symbols-outlined text-gray-600"
+                    >
+                      repeat </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >23</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      favorite </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >139</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      bar_chart
+                    </span>
+                    <span class="text-gray-600 relative bottom-0.5"
+                      >6.8K</span
+                    ></span
+                  ></span
+                >
+                <span class="flex justify-between gap-1 items-center">
+                  <span class="material-symbols-outlined text-gray-600">
+                    bookmark
+                  </span>
+                  <span
+                    class="material-symbols-outlined relative bottom-0.5 text-gray-600"
+                  >
+                    ios_share
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="line border-gray-600 border-b"></div>
+          <div class="post flex gap-1.5 sm:gap-2 px-1.5 py-2 sm:p-3 sm:ml-1.5">
+            <div class="postdp pt-1">
+              <img
+                src="./assets/images/Passportphoto.jpg"
+                alt=""
+                class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+              />
+            </div>
+            <div class="postContent w-full flex flex-col gap-2">
+              <div class="postauthor flex justify-between">
+                <span class="flex gap-1.5">
+                  <p class="userName font-medium text-white">Elon Musk</p>
+                  <p class="text-gray-500">@elonmusk · 9m</p>
+                </span>
+                <span class="flex items-center">
+                  <i class="fa-solid fa-ellipsis text-gray-500"></i>
+                </span>
+              </div>
+              <div class="content pt-5 w-full sm:w-[90%]">
+                <img
+                  class="rounded-2xl object-cover w-full"
+                  src="./assets/images/GmPz7qdawAA8Gfu.jpeg"
+                  alt=""
+                />
+              </div>
+              <div class="postreaction py-1.5 flex justify-between">
+                <span class="flex gap-3 w-[80%] justify-between">
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      chat_bubble </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >98</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span
+                      fill="red"
+                      class="material-symbols-outlined text-gray-600"
+                    >
+                      repeat </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >23</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      favorite </span
+                    ><span class="text-gray-600 relative bottom-0.5"
+                      >139</span
+                    ></span
+                  >
+                  <span class="flex gap-1 items-center"
+                    ><span class="material-symbols-outlined text-gray-600">
+                      bar_chart
+                    </span>
+                    <span class="text-gray-600 relative bottom-0.5"
+                      >6.8K</span
+                    ></span
+                  ></span
+                >
+                <span class="flex justify-between gap-1 items-center">
+                  <span class="material-symbols-outlined text-gray-600">
+                    bookmark
+                  </span>
+                  <span
+                    class="material-symbols-outlined relative bottom-0.5 text-gray-600"
+                  >
+                    ios_share
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="line border-gray-600 border-b"></div>
+        </div>
+      </div>
+      <div
+        class="right sticky lg:block hidden top-[-50vh] max-h-screen max-w-[405px] min-w-[360px] lg:flex gap-2.5 items-center px-3 py-1 flex-col w-[22%]"
+      >
+        <div class="searchbar w-full">
+          <input
+            class="border border-gray-700 w-full px-3 py-2 rounded-3xl focus:border-amber-950"
+            type="text"
+            placeholder="Search"
+          />
+        </div>
+        <div
+          class="subscription w-full flex gap-2 flex-col m-1 border-gray-700 border rounded-2xl p-3"
+        >
+          <p class="font-bold text-xl">Subscribe to Premium</p>
+          <p class="text-gray-300">
+            Subscribe to unlock new features and if eligible, receive a share of
+            revenue.
+          </p>
+          <button
+            class="px-6 py-1.5 flex items-center justify-center bg-blue-500 rounded-4xl w-[35%] font-medium"
+          >
+            Subscribe
+          </button>
+        </div>
+        <div
+          class="whathappening w-full flex gap-5 flex-col m-1 border-gray-700 border rounded-2xl p-3"
+        >
+          <p class="font-bold text-xl">What's Happening</p>
+          <div class="flex gap-3">
+            <img
+              class="w-19 rounded-2xl aspect-square"
+              src="./assets/images/Rny1a6iR.jpeg"
+              alt=""
+            /><span>
+              <p class="font-bold">From the Desk of Anthony Pompliano</p>
+              <p class="text-gray-500">LIVE</p>
+            </span>
+          </div>
+          <div class="trending flex justify-between">
+            <span>
+              <p class="text-gray-500 text-sm">Politics · Trending</p>
+              <p class="font-medium">#USAirForce</p>
+              <p class="text-gray-500 text-sm">12.4k posts</p>
+            </span>
+            <i class="fa-solid fa-ellipsis text-gray-500"></i>
+          </div>
+          <div class="trending flex justify-between">
+            <span>
+              <p class="text-gray-500 text-sm">Politics · Trending</p>
+              <p class="font-medium">#Pakistan</p>
+              <p class="text-gray-500 text-sm">18k posts</p>
+            </span>
+            <i class="fa-solid fa-ellipsis text-gray-500"></i>
+          </div>
+          <div class="trending flex justify-between">
+            <span>
+              <p class="text-gray-500 text-sm">Politics · Trending</p>
+              <p class="font-medium">Tulsi Gabbard</p>
+              <p class="text-gray-500 text-sm">54.4k posts</p>
+            </span>
+            <i class="fa-solid fa-ellipsis text-gray-500"></i>
+          </div>
+          <div class="trending flex justify-between">
+            <span>
+              <p class="text-gray-500 text-sm">Politics · Trending</p>
+              <p class="font-medium">#Fordow</p>
+              <p class="text-gray-500 text-sm">17k posts</p>
+            </span>
+            <i class="fa-solid fa-ellipsis text-gray-500"></i>
+          </div>
+          <a href="https://x.com/i/connect_people?user_id=1582371163418001411">
+            <p class="text-blue-400 py-2.5 pr-2.5 pl-0">Show more</p>
+          </a>
+        </div>
+        <div
+          class="follow w-full flex gap-5 flex-col m-1 border-gray-700 border rounded-2xl p-3"
+        >
+          <p class="font-bold text-xl">Who to follow</p>
+          <div
+            class="followsuggestions flex gap-4 justify-between items-center"
+          >
+            <span class="flex gap-2"
+              ><img
+                src="./assets/images/AmitShah.jpg"
+                alt=""
+                class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+              />
+              <span>
+                <p class="profileName">Amit Shah/p>
+                <p class="userName text-gray-400 text-sm">@AmitShah</p>
+              </span></span
+            >
+            <button
+              class="bg-white px-5 py-1.5 text-black font-medium rounded-3xl"
+            >
+              Follow
+            </button>
+          </div>
+          <div
+            class="followsuggestions flex gap-4 justify-between items-center"
+          >
+            <span class="flex gap-2"
+              ><img
+                src="./assets/images/PreityZinta.jpg"
+                alt=""
+                class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+              />
+              <span>
+                <p class="profileName">Preity G Zinta</p>
+                <p class="userName text-gray-400 text-sm">@realpreityzinta</p>
+              </span></span
+            >
+            <button
+              class="bg-white px-5 py-1.5 text-black font-medium rounded-3xl"
+            >
+              Follow
+            </button>
+          </div>
+          <div
+            class="followsuggestions flex gap-4 justify-between items-center"
+          >
+            <span class="flex gap-2"
+              ><img
+                src="./assets/images/BBCWorld.jpg"
+                alt=""
+                class="profilePhoto w-10 h-10 object-cover rounded-4xl"
+              />
+              <span>
+                <p class="profileName">BBC News</p>
+                <p class="userName text-gray-400 text-sm">@BBC World</p>
+              </span></span
+            >
+            <button
+              class="bg-white px-5 py-1.5 text-black font-medium rounded-3xl"
+            >
+              Follow
+            </button>
+          </div>
+          <a href="https://x.com/i/connect_people?user_id=1582371163418001411">
+            <p class="text-blue-400 py-2.5 pr-2.5 pl-0">Show more</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
